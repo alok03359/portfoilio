@@ -363,6 +363,7 @@
                 animation: none;
                 background-color: #d4d4d4;
                 position: fixed;
+                display: block;
             }
 
             .profile-pic img{
@@ -383,6 +384,7 @@
                 font-size: 2rem;
                 font-family: monospace;
                 color: #150f96;
+                padding-top: 15px;
             }
 
             .right{
@@ -392,7 +394,7 @@
             }
 
             .main{
-                height: 90vh;
+                height: 100vh;
                 padding-left: 50px;
                 padding-right: 50px;
             }
@@ -497,6 +499,10 @@
             #Achievements{
                 padding-bottom: 5rem;
             }
+
+            #menu-close-btn{
+                display: none;
+            }
         }
         
     </style>
@@ -509,6 +515,13 @@
             <div class="profile-pic">
                 <img src="./Alok.jpg" />
             </div>
+
+            <div class="phone-menu">
+                <p>Portfolio</p>
+                <i id="menu-icon" class="fa-solid fa-bars"></i>
+                <i id="menu-close-btn" class="fa-solid fa-xmark"></i>
+            </div>
+
             <div class="links">
                 <a href="#About">About</a>
                 <a href="#Experience">Experience</a>
@@ -518,12 +531,7 @@
                 <a href="#Achievements">Achievements</a>
             </div>
 
-            <div class="phone-menu">
 
-                <p>Portfolio</p>
-                <i class="fa-solid fa-bars"></i>
-
-            </div>
         </div>
     </div>
     <div class="right">
@@ -789,6 +797,20 @@
 
         document.getElementById("copy-btn").addEventListener('click', () => {
             navigator.clipboard.writeText(URL);
+        })
+
+        document.getElementById("menu-icon").addEventListener('click', () => {
+            document.querySelectorAll(".left")[0].style.height = "100vh";
+            document.getElementById("menu-icon").style.display = "none";
+            document.getElementById("menu-close-btn").style.display = "block";        
+            console.log(document.querySelectorAll(".links")[0])
+           
+        })
+
+        document.getElementById("menu-close-btn").addEventListener('click', () => {
+            document.querySelectorAll(".left")[0].style.height = "10vh";
+            document.getElementById("menu-icon").style.display = "block";
+            document.getElementById("menu-close-btn").style.display = "none";
         })
 
     </script>
