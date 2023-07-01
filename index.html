@@ -1,784 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alok Kumar Singh - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link rel="stylesheet" href="style.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: monospace;
-        }
 
 
-
-        html{
-            scroll-behavior: smooth;
-        }
-
-        @keyframes onload {
-            from{
-                width: 100%;
-            }
-            to{
-                width: 20%;
-            }
-        }
-
-        .left {
-            width: 20%;
-            height: 100vh;
-            position: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #150f96; 
-            animation: onload 3s;
-        }
-
-        .profile-pic img {
-            height: 150px;
-            width: 150px;
-            border: 5px solid #d6d6d6;
-            border-radius: 50%;
-        }
-
-        .links {
-            margin-top: 50px;
-        }
-
-        .links a {
-            display: block;
-            color: #d6d6d6;
-            font-size: 20px;
-            text-align: center;
-            text-transform: uppercase;
-            text-decoration: none;
-            padding: 5px 0;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
-        }
-
-        .phone-menu{
-            display: none;
-        }
-
-        .right {
-            width: 80%;
-            float: right;
-            background-color: #dadada;
-        }
-
-        .main {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-left: 100px;
-            padding-right: 100px;
-            border-bottom: 2px solid #150f96;
-        }
-
-        .about h3 {
-            font-size: 70px;
-            color: #150f96;
-        }
-
-        .about div ul {
-            list-style-type: none;
-            display: flex;
-            color: #150f96;
-            font-size: 15px;
-            font-family: sans-serif;
-        }
-
-        .about div ul li {
-            margin-right: 20px;
-        }
-
-        .about div ul li a{
-            text-decoration: none;
-        }
-        .about div ul li a:hover{
-            text-decoration: underline;
-        }
-
-        .about div i {
-            font-size: 13px;
-            padding-right: 10px;
-        }
-
-        .about-desc {
-            font-size: 15px;
-            margin-top: 25px;
-        }
-
-        .contact {
-            margin-top: 30px;
-            display: flex;
-            justify-content:flex-start;
-        }
-
-        .contact i {
-            height: 50px;
-            width: 50px;
-            margin-right: 10px;
-            padding-top: 13px;
-            border-radius: 50%;
-            font-size: 20px;
-            text-align: center;
-            color: #150f96;
-            background-color: #c4c4c4;
-        }
-
-        #share-btn{
-            width: 0;
-        }
-
-        .contact i:hover {
-            box-shadow: 5px 10px 18px #a9a9a9;
-        }
-
-        #share-btn{
-            border-radius: 50%;
-            border: none;
-        }
-
-        .section {
-            padding: 50px 100px 0 100px;
-        }
-
-        .section-header {
-            color: #150f96;
-            font-size: 50px;
-            text-transform: uppercase;
-        }
-
-        .experience-list {
-            margin-top: 50px;
-        }
-
-        .experience-card {
-            background-color: #d6d6d6;
-            border-radius: 30px;
-            padding: 30px;
-            margin-top: 30px;
-        }
-
-        .experience-card:hover {
-            /* box-shadow: 5px 10px 18px #a9a9a9; */
-        }
-
-        .exp-card-header {
-            display: flex;
-            justify-content: space-between;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #150f96;
-            font-size: 15px;
-            font-weight: 600;
-        }
-
-        .exp-desc {
-            font-size: 15px;
-            margin-top: 10px;
-            margin-left: 20px;
-        }
-
-
-        .education-list {
-            margin-top: 50px;
-        }
-
-        .education-card {
-            background-color: #d6d6d6;
-            border-radius: 30px;
-            padding: 30px;
-            margin-top: 10px;
-            display: flex;
-            justify-content: space-between;
-            font-size: 15px;
-        }
-
-        .education-card:hover {
-            /* box-shadow: 5px 10px 18px #a9a9a9; */
-        }
-
-        .education-card-left {
-            display: flex;
-        }
-
-        .course-name {
-            padding-left: 15px;
-        }
-
-        .institute {
-            padding-left: 15px;
-        }
-
-
-        .skills-container {
-            border-radius: 30px;
-            margin-top: 30px;
-            padding: 30px;
-            display: flex;
-            justify-content: space-between;
-            background-color: #d6d6d6;
-            
-        }
-
-        .skills-container:hover {
-            /* box-shadow: 5px 10px 18px #a9a9a9; */
-        }
-
-        .skills-col {
-            font-size: 15px;
-            margin-right: 40px;
-        }
-
-        .skills-col ul {
-            list-style-type: none;
-        }
-
-
-        .projects-list{
-            margin-top: 30px;
-        }
-
-        .project-card{
-            padding: 30px;
-            margin-top: 10px;
-            border-radius: 30px;
-            background-color: #d6d6d6;
-        }
-
-        .project-header{
-            font-size: 15px;
-            font-weight: 600;
-            border-bottom: 1px solid #150f96;
-            padding-bottom: 5px;
-        }
-
-        .project-desc{
-            margin-top: 10px;
-            font-size: 15px;
-        }
-
-
-        .achievements-list{
-            margin-top: 10px;
-            margin-bottom: 30px;
-            padding: 30px;
-            border-radius: 30px;
-            background-color: #d6d6d6;
-            font-size: 15px;
-        }
-
-        .popup-main{
-            opacity: 0.9;
-            position: fixed;
-            z-index: 10; 
-            height: 100vh; 
-            width: 100vw; 
-            background-color: #150f96; 
-            display: none;
-            animation: showPopup 2s linear;
-        }
-
-        @keyframes showPopup {
-            from{
-                display: none;
-            }
-            to{
-                display: block;
-            }
-            
-        }
-        
-        .link-container-main{
-            height:80vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .link-container{
-            display: flex;
-            height: 70px;
-            width: 400px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .link-text-box{
-            background-color: #fff;
-            display: inline; 
-            height: 40px; 
-            width:340px;
-            padding-top: 12px;
-            padding-left: 8px;
-        }
-
-        .copy-button{
-            background-color: #333;
-            color: #fff;
-            display: inline; 
-            height: 40px; 
-            width:60px;
-            outline: none;
-            border: none;
-        }
-
-        .copy-button:hover{
-            background-color: #222;
-        }
-
-        .popup-close-container{
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .popup-close{
-            color:#e6e6e6; 
-            font-size: 30px;
-            padding-right: 50px;
-            padding-top: 30px;
-        }
-
-        .popup-close:hover{
-            color: #000;
-            transition: 0.5s;
-        }
-
-        @media screen and (max-width:992px){
-            .left{
-                width: 100%;
-                height: 10vh;
-                animation: none;
-                background-color: #d4d4d4;
-                position: fixed;
-                display: block;
-            }
-
-            .profile-pic img{
-                display: none;
-            }
-
-            .links{
-                display: none;
-            }
-
-            .phone-menu{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100vw;
-                padding: 0 50px;
-                color: #d6d6d6;
-                font-size: 2rem;
-                font-family: monospace;
-                color: #150f96;
-                padding-top: 25px;
-            }
-
-            .right{
-                width: 100%;
-                right: 90h;
-                float: none;
-            }
-
-            .main{
-                height: 100vh;
-                padding-left: 50px;
-                padding-right: 50px;
-            }
-
-            .section {
-            padding: 30px 30px 0 30px;
-            }
-
-            .section-header {
-                color: #150f96;
-                font-size: 30px;
-                text-transform: uppercase;
-                padding-left: 20px;
-            }
-
-            .portfolio-link, #share-btn{
-                display: none;
-            }
-
-            
-            .about h3 {
-                font-size: 40px;
-                margin-bottom: 1rem;
-            }
-
-            .about div ul {
-                display: block;
-            }
-
-            .experience-card{
-                padding: 10px;
-            }
-
-            .exp-card-header{
-                display: block;
-                padding: 10px;
-            }
-
-            .exp-card-header-left{
-                padding-bottom: 1rem;
-            }
-
-            .education-card { 
-                padding: 20px;
-                display: block;
-            }
-
-            .education-card-left {
-                display: block;
-            }
-
-            .course-name {
-                padding-left: 0px;
-            }
-
-            .institute {
-                padding-left: 0px;
-            }
-
-            .period{
-                border-bottom: 1px solid #150f96;
-                padding-bottom: 5px;
-            }
-
-            .course-name{
-                padding-top: 5px;
-            }
-
-            .grade{
-                padding-top: 10px;
-            }
-
-            .skills-container{
-                display: block;
-            }
-
-            .skills-col{
-                line-height: 20px;
-            }
-
-            .project-desc{
-                line-height: 20px;
-            }
-
-            .about-desc{
-                line-height: 20px;
-            }
-
-            .exp-desc{
-                line-height: 20px;
-            }
-
-            .education-card{
-                line-height: 20px;
-            }
-
-            .achievements-list{
-                margin-bottom: 0;
-                line-height: 20px;
-            }
-
-            #Achievements{
-                padding-bottom: 5rem;
-            }
-
-            #menu-close-btn{
-                display: none;
-            }
-        }
         
     </style>
-
 </head>
-
 <body>
-    <div class="left">
-        <div>
-            <div class="profile-pic">
-                <img src="./Alok.jpg" />
+
+    
+        <div class="header-container">
+            <div class="full-header">
+                <div>
+                    <p class="logo">Portfolio</p>
+                </div>
+                <div class="links">
+                    <a href="#About">About</a>
+                    <a href="#Experience">Experience</a>
+                    <a href="#Education">Education</a>
+                    <a href="#Skills">Skills</a>
+                    <a href="#Projects">Projects</a>
+                    <a href="#Achievements">Achievements</a>
+                </div>
             </div>
 
-            <div class="phone-menu">
-                <p>Portfolio</p>
-                <i id="menu-icon" class="fa-solid fa-bars"></i>
-                <i id="menu-close-btn" class="fa-solid fa-xmark"></i>
-            </div>
-
-            <div class="links">
-                <a href="#About">About</a>
-                <a href="#Experience">Experience</a>
-                <a href="#Education">Education</a>
-                <a href="#Skills">Skills</a>
-                <a href="#Projects">Projects</a>
-                <a href="#Achievements">Achievements</a>
-            </div>
-
-
-        </div>
-    </div>
-    <div class="right">
-        <div class="main" id="About">
-            <div class="about-container">
-                <div class="about">
-                    <h3>ALOK KUMAR SINGH</h3>
+            <div class="min-header">
+                <div class="header-top">
                     <div>
+                        <p class="logo">Portfolio</p>
+                    </div>
+                    <div class="menu-open-close">
+                        <i id="menu-icon" class="fa-solid fa-bars"></i>
+                        <i id="menu-close-btn" class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="header-main">
+                    <div class="min-header-links">
+                        <a href="#About" onclick="closePopup()">About</a>
+                        <a href="#Experience" onclick="closePopup()">Experience</a>
+                        <a href="#Education" onclick="closePopup()">Education</a>
+                        <a href="#Skills" onclick="closePopup()">Skills</a>
+                        <a href="#Projects" onclick="closePopup()">Projects</a>
+                        <a href="#Achievements" onclick="closePopup()">Achievements</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-section">
+            <div class="main" id="About">
+                <div class="about-container">
+                    <div class="about">
+                        <h3 class="about-name">ALOK KUMAR SINGH</h3>
+                        <div class="about-contact">
+                            <ul>
+                                <li>
+                                    <i class="fa-sharp fa-solid fa-location-dot"></i><a target="_blank" href="http://maps.google.com/?q=Bangalore, Karnataka, India, 560078">Bangalore, Karnataka, India</a>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-mobile-screen-button"></i></i><a href="tel:+91 7259513304">+91 7259513304</a>
+                                </li>
+                                <li>
+                                    <i class="fa-regular fa-envelope"></i><a href="mailto:alok03359@gmail.com">alok03359@gmail.com</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="about-desc">
+                        I'm detail-oriented and committed engineer, with get-it-done, and high quality product spirit with 10 months of proven experience in Angular, Ionic Framework, Spring Boot and MySQL, looking for growth opportunities in software development.
+                    </div>
+                    <div class="contact">
+                        <a target="_blank" href="https://www.linkedin.com/in/alok-kumar-singh-62b79a190/"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a target="_blank"href="https://github.com/alok03359"><i class="fa-brands fa-github"></i></a>
+                        <a target="_blank"href="https://leetcode.com/alok03359/"><i class="fa-sharp fa-solid fa-code"></i></a>
+                        <a href="ALOK_KUMAR-SINGH.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
+                        <button id="share-btn"  target="_blank"><i class="fa-solid fa-share-nodes"></i></button>
+                        <a id="portfolio-link" href="https://master--bejewelled-madeleine-089cbe.netlify.app/"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="section" id="Experience">
+                <div class="section-header">
+                    <h3>Experience</h3>
+                </div>
+                <div class="experience-list">
+                    <div class="experience-card">
+                        <div class="exp-card-header">
+                            <div class="exp-card-header-left">
+                                Pratisthan Software Ventures - Software Engineer
+                            </div>
+                            <div class="exp-card-header-right">
+                                August 2022 - Present
+                            </div>
+                        </div>
+                        <div class="exp-desc">
+                            <ul>
+                                <li>Added UI components from scratch and worked on Cambridge Mobile Telematics SDK
+                                    integration to
+                                    collect driving data to provide insurance premium offers to users as per their driving
+                                    score.<br /><br /></li>
+                                <li>Added chat history component to keep track of conversations between client and
+                                    coordinators on
+                                    scheduling portal. Enhanced existing UI components on mobile and web
+                                    applications.<br /><br /></li>
+                                <li>Worked on security scan fixes to prevent user data exposure, quarterly npm package
+                                    updates and
+                                    breaking change fixes.<br /><br /></li>
+                                <li>Added shell script to generate scheduled server restart and backup logs, resolved
+                                    production issues
+                                    reported by users.<br /><br /></li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div class="experience-card">
+                        <div class="exp-card-header">
+                            <div class="exp-card-header-left">
+                                Technobuk Solutions - Intern
+                            </div>
+                            <div class="exp-card-header-right">
+                                September 2020 - October 2020
+                            </div>
+                        </div>
+                        <div class="exp-desc">
+                            <ul>
+                                <li>Created Admin panel dashboard, to manage users data, added TinyMCE editor to write
+                                    blogs, and
+                                    stored blogs and images in database.
+                                    <br /><br />
+                                </li>
+                                <li>Added UI components to display blogs, google reviews, save user details, newsletter
+                                    subscription etc.<br /><br /></li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div class="experience-card">
+                        <div class="exp-card-header">
+                            <div class="exp-card-header-left">
+                                Virtual Labs IIT Roorkee - Software Developer
+                            </div>
+                            <div class="exp-card-header-right">
+                                July 2020 - September 2020
+                            </div>
+                        </div>
+                        <div class="exp-desc">
+                            <ul>
+                                <li>Worked on developing a virtual simulation of Hybrid Digital and Analog Electronics Lab
+                                    with
+                                    Department of Physics, MJP Rohilkhand University.
+                                    <br /><br />
+                                </li>
+                                <li>I have been recognised as Silver Developer for this work.
+                                    <br /><br />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="section" id="Education">
+                <div class="section-header">
+                    <h3>Education</h3>
+                </div>
+    
+                <div class="education-list">
+                    <div class="education-card">
+                        <div class="education-card-left">
+                            <div class="period">2018 - 2022</div>
+                            <div class="course">
+                                <div class="course-name">Bachelor of Technology in Computer Science </div>
+                                <div class="institute">MJP Rohilkhand University, Bareilly, U.P. India</div>
+                            </div>
+                        </div>
+                        <div class="grade">CGPA - 8.18</div>
+                    </div>
+    
+                    <div class="education-card">
+                        <div class="education-card-left">
+                            <div class="period">2016 - 2018</div>
+                            <div class="course">
+                                <div class="course-name">Senior Secondary School ( XII ) - CBSE</div>
+                                <div class="institute">Academic Heights Public School, Gorakhpur, U.P., India</div>
+                            </div>
+                        </div>
+                        <div class="grade">Percentage - 70.8</div>
+                    </div>
+    
+                    <div class="education-card">
+                        <div class="education-card-left">
+                            <div class="period">2014 - 2016</div>
+                            <div class="course">
+                                <div class="course-name">Higher Secondary School ( X ) - CBSE</div>
+                                <div class="institute">Navals National Academy, Gorakhpur, U.P. India</div>
+                            </div>
+                        </div>
+                        <div class="grade">CGPA - 10.0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="Skills">
+                <div class="section-header">
+                    <h3>Skills</h3>
+                </div>
+    
+                <div class="skills-container">
+                    <div class="skills-col">
                         <ul>
-                            <li>
-                                <i class="fa-sharp fa-solid fa-location-dot"></i><a target="_blank" href="http://maps.google.com/?q=Bangalore, Karnataka, India, 560078">Bangalore, Karnataka, India</a>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-mobile-screen-button"></i></i><a href="tel:+91 7259513304">+91 7259513304</a>
-                            </li>
-                            <li>
-                                <i class="fa-regular fa-envelope"></i><a href="mailto:alok03359@gmail.com">alok03359@gmail.com</a>
-                            </li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>SCSS</li>
+                        </ul>
+                    </div>
+                    <div class="skills-col">
+                        <ul>
+                            <li>Bootstrap</li>
+                            <li>JavaScript</li>
+                            <li>Angular</li>
+                        </ul>
+                    </div>
+                    <div class="skills-col">
+                        <ul>
+                            <li>Ionic Framework</li>
+                            <li>Java</li>
+                            <li>Spring Boot</li>
+                        </ul>
+                    </div>
+                    <div class="skills-col">
+                        <ul>
+                            <li>MySQL</li>
+                            <li>Data Structures</li>
+                            <li>Algorithms</li>
+                        </ul>
+                    </div>
+                    <div class="skills-col">
+                        <ul>
+                            <li>Computer Network</li>
+                            <li>DBMS</li>
+                            <li>Operating System</li>
                         </ul>
                     </div>
                 </div>
-                <div class="about-desc">
-                    I'm detail-oriented and committed engineer, with get-it-done, and high quality product spirit with 10 months of proven experience in Angular, Ionic Framework, Spring Boot and MySQL, looking for growth opportunities in software development.
+            </div>
+            <div class="section" id="Projects">
+                <div class="section-header">
+                    <h3>Projects</h3>
                 </div>
-                <div class="contact">
-                    <a target="_blank" href="https://www.linkedin.com/in/alok-kumar-singh-62b79a190/"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a target="_blank"href="https://github.com/alok03359"><i class="fa-brands fa-github"></i></a>
-                    <a target="_blank"href="https://leetcode.com/alok03359/"><i class="fa-sharp fa-solid fa-code"></i></a>
-                    <a href="ALOK_KUMAR-SINGH.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
-                    <button id="share-btn"  target="_blank"><i class="fa-solid fa-share-nodes"></i></button>
-                    <a id="portfolio-link" href="https://master--bejewelled-madeleine-089cbe.netlify.app/"></a>
+                <div class="projects-list">
+                    <div class="project-card">
+                        <div class="project-header">Client Mobile App / Agent Mobile App / Scheduling Portal</div>
+                        <div class="project-desc">These are the projects on which i have been working at my current job role, skills used on these projects are - HTML, SCSS, Angular, SpringBoot, MySQL, Shell Scripting and tools like Postman, VS Code, Intellij, Beyond Compare, SmartSVN etc.
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">Hybrid Analog And Digital Electronics Lab</div>
+                        <div class="project-desc">I developed the virtual simulation of Hybrid Digital and Analog Electronics Lab with a team, we mainly worked on JSplumb library.
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">Scribe - Mini Blogging Web Application</div>
+                        <div class="project-desc"> I developed this web application using Angular and Firebase while learning to implement angular as a front-end technology from Internshala</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="section" id="Experience">
-            <div class="section-header">
-                <h3>Experience</h3>
-            </div>
-            <div class="experience-list">
-                <div class="experience-card">
-                    <div class="exp-card-header">
-                        <div class="exp-card-header-left">
-                            Pratisthan Software Ventures - Software Engineer
-                        </div>
-                        <div class="exp-card-header-right">
-                            August 2022 - Present
-                        </div>
-                    </div>
-                    <div class="exp-desc">
-                        <ul>
-                            <li>Added UI components from scratch and worked on Cambridge Mobile Telematics SDK
-                                integration to
-                                collect driving data to provide insurance premium offers to users as per their driving
-                                score.<br /><br /></li>
-                            <li>Added chat history component to keep track of conversations between client and
-                                coordinators on
-                                scheduling portal. Enhanced existing UI components on mobile and web
-                                applications.<br /><br /></li>
-                            <li>Worked on security scan fixes to prevent user data exposure, quarterly npm package
-                                updates and
-                                breaking change fixes.<br /><br /></li>
-                            <li>Added shell script to generate scheduled server restart and backup logs, resolved
-                                production issues
-                                reported by users.<br /><br /></li>
-                        </ul>
-                    </div>
+            <div class="section" id="Achievements">
+                <div class="section-header">
+                    <h3>Achievements</h3>
                 </div>
-
-                <div class="experience-card">
-                    <div class="exp-card-header">
-                        <div class="exp-card-header-left">
-                            Technobuk Solutions - Intern
-                        </div>
-                        <div class="exp-card-header-right">
-                            September 2020 - October 2020
-                        </div>
-                    </div>
-                    <div class="exp-desc">
-                        <ul>
-                            <li>Created Admin panel dashboard, to manage users data, added TinyMCE editor to write
-                                blogs, and
-                                stored blogs and images in database.
-                                <br /><br />
-                            </li>
-                            <li>Added UI components to display blogs, google reviews, save user details, newsletter
-                                subscription etc.<br /><br /></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-card">
-                    <div class="exp-card-header">
-                        <div class="exp-card-header-left">
-                            Virtual Labs IIT Roorkee - Software Developer
-                        </div>
-                        <div class="exp-card-header-right">
-                            July 2020 - September 2020
-                        </div>
-                    </div>
-                    <div class="exp-desc">
-                        <ul>
-                            <li>Worked on developing a virtual simulation of Hybrid Digital and Analog Electronics Lab
-                                with
-                                Department of Physics, MJP Rohilkhand University.
-                                <br /><br />
-                            </li>
-                            <li>I have been recognised as Silver Developer for this work.
-                                <br /><br />
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="section" id="Education">
-            <div class="section-header">
-                <h3>Education</h3>
-            </div>
-
-            <div class="education-list">
-                <div class="education-card">
-                    <div class="education-card-left">
-                        <div class="period">2018 - 2022</div>
-                        <div class="course">
-                            <div class="course-name">Bachelor of Technology in Computer Science </div>
-                            <div class="institute">MJP Rohilkhand University, Bareilly, U.P. India</div>
-                        </div>
-                    </div>
-                    <div class="grade">CGPA - 8.18</div>
-                </div>
-
-                <div class="education-card">
-                    <div class="education-card-left">
-                        <div class="period">2016 - 2018</div>
-                        <div class="course">
-                            <div class="course-name">Senior Secondary School ( XII ) - CBSE</div>
-                            <div class="institute">Academic Heights Public School, Gorakhpur, U.P., India</div>
-                        </div>
-                    </div>
-                    <div class="grade">Percentage - 70.8</div>
-                </div>
-
-                <div class="education-card">
-                    <div class="education-card-left">
-                        <div class="period">2014 - 2016</div>
-                        <div class="course">
-                            <div class="course-name">Higher Secondary School ( X ) - CBSE</div>
-                            <div class="institute">Navals National Academy, Gorakhpur, U.P. India</div>
-                        </div>
-                    </div>
-                    <div class="grade">CGPA - 10.0</div>
-                </div>
-            </div>
-        </div>
-        <div class="section" id="Skills">
-            <div class="section-header">
-                <h3>Skills</h3>
-            </div>
-
-            <div class="skills-container">
-                <div class="skills-col">
+                <div class="achievements-list">
                     <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>SCSS</li>
-                    </ul>
-                </div>
-                <div class="skills-col">
-                    <ul>
-                        <li>Bootstrap</li>
-                        <li>JavaScript</li>
-                        <li>Angular</li>
-                    </ul>
-                </div>
-                <div class="skills-col">
-                    <ul>
-                        <li>Ionic Framework</li>
-                        <li>Java</li>
-                        <li>Spring Boot</li>
-                    </ul>
-                </div>
-                <div class="skills-col">
-                    <ul>
-                        <li>MySQL</li>
-                        <li>Data Structures</li>
-                        <li>Algorithms</li>
-                    </ul>
-                </div>
-                <div class="skills-col">
-                    <ul>
-                        <li>Computer Network</li>
-                        <li>DBMS</li>
-                        <li>Operating System</li>
+                        <li>Elitmus score : 77.24 percentile</li>
+                        <li>Organised International Conference On Academic Research In Engineering, Management And Information Technology (ICAREMIT-2020) at MJP Rohilkhand University, Bareilly, India.</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="section" id="Projects">
-            <div class="section-header">
-                <h3>Projects</h3>
+        <div id="popup" class="popup-main">
+            <div class="popup-close-container">
+                <i id="close-btn" class="fa-solid fa-xmark popup-close"></i>
             </div>
-            <div class="projects-list">
-                <div class="project-card">
-                    <div class="project-header">Client Mobile App / Agent Mobile App / Scheduling Portal</div>
-                    <div class="project-desc">These are the projects on which i have been working at my current job role, skills used on these projects are - HTML, SCSS, Angular, SpringBoot, MySQL, Shell Scripting and tools like Postman, VS Code, Intellij, Beyond Compare, SmartSVN etc.
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">Hybrid Analog And Digital Electronics Lab</div>
-                    <div class="project-desc">I developed the virtual simulation of Hybrid Digital and Analog Electronics Lab with a team, we mainly worked on JSplumb library.
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">Scribe - Mini Blogging Web Application</div>
-                    <div class="project-desc"> I developed this web application using Angular and Firebase while learning to implement angular as a front-end technology from Internshala</div>
-                </div>
+            <div class="link-container-main">
+                <div class="link-container">
+                    <div id="link-text" class="link-text-box"></div>
+                    <button id="copy-btn" class="copy-button">Copy</button>
+                </div>      
             </div>
+    
         </div>
-        <div class="section" id="Achievements">
-            <div class="section-header">
-                <h3>Achievements</h3>
-            </div>
-            <div class="achievements-list">
-                <ul>
-                    <li>Elitmus score : 77.24 percentile</li>
-                    <li>Organised International Conference On Academic Research In Engineering, Management And Information Technology (ICAREMIT-2020) at MJP Rohilkhand University, Bareilly, India.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div id="popup" class="popup-main">
-        <div class="popup-close-container">
-            <i id="close-btn" class="fa-solid fa-xmark popup-close"></i>
-        </div>
-        <div class="link-container-main">
-            <div class="link-container">
-                <div id="link-text" class="link-text-box"></div>
-                <button id="copy-btn" class="copy-button">Copy</button>
-            </div>      
-        </div>
-
-    </div>
-    <style>
-        
-    </style>
 
     <script>
         const URL = window.location.href;
@@ -786,9 +302,12 @@
         const button = document.querySelector('#share-button');
   
         document.getElementById("share-btn").addEventListener('click', () => {
+            console.log("button clicked")
             link.textContent = URL;
             link.href = URL;
-            document.getElementById("popup").style.display = 'block';
+            console.log("URL",URL)
+            console.log(document.getElementsByClassName("popup-main"))
+            document.getElementsByClassName("popup-main")[0].style.display = 'block';
         });
 
         document.getElementById("close-btn").addEventListener('click',()=>{
@@ -800,20 +319,22 @@
         })
 
         document.getElementById("menu-icon").addEventListener('click', () => {
-            document.querySelectorAll(".left")[0].style.height = "100vh";
+            document.querySelectorAll(".header-main")[0].style.display = "flex";
             document.getElementById("menu-icon").style.display = "none";
             document.getElementById("menu-close-btn").style.display = "block";        
-            console.log(document.querySelectorAll(".links")[0])
            
         })
 
         document.getElementById("menu-close-btn").addEventListener('click', () => {
-            document.querySelectorAll(".left")[0].style.height = "10vh";
+            closePopup();
+        })
+        
+        function closePopup(){
+            document.querySelectorAll(".header-main")[0].style.display = "none";
             document.getElementById("menu-icon").style.display = "block";
             document.getElementById("menu-close-btn").style.display = "none";
-        })
-
+        }
     </script>
-
+    
 </body>
 </html>

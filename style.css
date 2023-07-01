@@ -1,0 +1,564 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body{
+    background-color: #dadada;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.header-container{
+    padding: 0 150px;
+    background-color: #d6d6d6;
+    position: sticky;
+    top: 0;
+}
+
+.main-section{
+    padding: 0 150px;
+    border-bottom: 2px solid #150f96;
+    background-color: #dadada;
+}
+
+.main-container{
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0 150px;
+    background-color: #dadada;
+    padding-bottom: 5rem;
+}
+
+.full-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #150f96;
+    text-shadow: 0 0 30px #150f96;
+}
+
+.links a {
+    font-size: 20px;
+    text-decoration: none;
+    padding: 5px;
+    color: #150f96;
+}
+
+.links a:hover {
+    text-shadow: 0px 0px 20px #150f96;
+    transition-duration: .25s;
+}
+
+.min-header{
+    display: none;
+}
+
+.header-top{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-main{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 85vh;
+    display: none;
+}
+
+.min-header-links {
+    margin-top: 50px;
+}
+
+.min-header-links a {
+    display: block;
+    color: #150f96;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.min-header-links a:hover {
+    text-shadow: 0px 0px 20px #150f96;
+    transition-duration: .25s;
+}
+
+.menu-open-close{
+    font-size: 20px;
+    color: #150f96;
+}
+
+#menu-close-btn{
+    display: none;
+}
+
+/* HEADER END */
+
+/* ABOUT -START */
+.main {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+.about-name{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-contact{
+    display: flex;
+    justify-content: flex-end;
+}
+.about h3 {
+    font-size: 70px;
+    color: #150f96;
+}
+
+.about div ul {
+    list-style-type: none;
+    display: flex;
+    color: #150f96;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+.about div ul li {
+    margin-right: 20px;
+}
+
+.about div ul li a{
+    text-decoration: none;
+}
+.about div ul li a:hover{
+    text-decoration: underline;
+}
+
+.about div i {
+    font-size: 13px;
+    padding-right: 10px;
+}
+
+.about-desc {
+    font-size: 15px;
+    margin-top: 25px;
+    text-align: right;
+    padding-left: 35%;
+}
+
+.contact {
+    margin-top: 30px;
+    display: flex;
+    justify-content:flex-end;
+}
+
+.contact i {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    padding-top: 13px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    color: #150f96;
+    background-color: #c4c4c4;
+}
+
+.contact button{
+    display: contents;
+}
+
+#share-btn{
+    width: 0;
+}
+
+.contact i:hover {
+    box-shadow: 5px 10px 18px #a9a9a9;
+}
+
+#share-btn{
+    border-radius: 50%;
+    border: none;
+}
+/* ABOUT - END */
+
+.section {
+    padding-top: 50px;
+}
+
+.section-header {
+    color: #150f96;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+.experience-list {
+    margin-top: 50px;
+}
+
+.experience-card {
+    background-color: #d6d6d6;
+    border-radius: 30px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.experience-card:hover {
+    /* box-shadow: 5px 10px 18px #a9a9a9; */
+}
+
+.exp-card-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #150f96;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.exp-desc {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+
+.education-list {
+    margin-top: 50px;
+}
+
+.education-card {
+    background-color: #d6d6d6;
+    border-radius: 30px;
+    padding: 30px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.education-card:hover {
+    /* box-shadow: 5px 10px 18px #a9a9a9; */
+}
+
+.education-card-left {
+    display: flex;
+}
+
+.course-name {
+    padding-left: 15px;
+}
+
+.institute {
+    padding-left: 15px;
+}
+
+
+.skills-container {
+    border-radius: 30px;
+    margin-top: 30px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #d6d6d6;
+    
+}
+
+.skills-container:hover {
+    /* box-shadow: 5px 10px 18px #a9a9a9; */
+}
+
+.skills-col {
+    font-size: 15px;
+    margin-right: 40px;
+}
+
+.skills-col ul {
+    list-style-type: none;
+}
+
+
+.projects-list{
+    margin-top: 30px;
+}
+
+.project-card{
+    padding: 30px;
+    margin-top: 10px;
+    border-radius: 30px;
+    background-color: #d6d6d6;
+}
+
+.project-header{
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid #150f96;
+    padding-bottom: 5px;
+}
+
+.project-desc{
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+
+.achievements-list{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 30px;
+    background-color: #d6d6d6;
+    font-size: 15px;
+}
+
+.popup-main{
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    z-index: 100; 
+    height: 100vh; 
+    width: 100vw; 
+    background-color: #150f96; 
+    display: none;
+    animation: showPopup 2s linear;
+}
+
+@keyframes showPopup {
+    from{
+        display: none;
+    }
+    to{
+        display: block;
+    }
+    
+}
+
+.link-container-main{
+    height:80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-container{
+    display: flex;
+    height: 70px;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-text-box{
+    background-color: #fff;
+    display: inline; 
+    height: 40px; 
+    width:340px;
+    padding-top: 12px;
+    padding-left: 8px;
+}
+
+.copy-button{
+    background-color: #333;
+    color: #fff;
+    display: inline; 
+    height: 40px; 
+    width:60px;
+    outline: none;
+    border: none;
+}
+
+.copy-button:hover{
+    background-color: #222;
+}
+
+.popup-close-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.popup-close{
+    color:#e6e6e6; 
+    font-size: 30px;
+    padding-right: 50px;
+    padding-top: 30px;
+}
+
+.popup-close:hover{
+    color: #000;
+    transition: 0.5s;
+}
+
+@media screen and (max-width:1068px) {
+    .header-container{
+        padding: 0 40px;
+    }
+    .main-section{
+        padding: 0 40px;
+    }
+    .main-container{
+        padding: 0 80px;
+    }
+
+    .full-header{
+        display: none;
+    }
+
+    .min-header{
+        display: block;
+    }
+
+    /* .portfolio-link, #share-btn{
+        display: none;
+    } */
+
+}
+
+@media screen and (max-width:700px) {
+    .header-container{
+        padding: 0 40px;
+    }
+    .main-section{
+        padding: 0 40px;
+    }
+    .main-container{
+        padding: 0 40px;
+    }
+    .full-header{
+        display: none;
+    }
+    .min-header{
+        display: block;
+    }
+    .about div ul{
+        display: block;
+    }
+
+    .about-name{
+        display: block;
+    }
+    .about-contact{
+        display: block;
+    }
+    .contact{
+        justify-content: flex-start;
+    }
+    .about-desc{
+        padding-left: 0;
+        text-align: left;
+    }
+
+    .section-header {
+        color: #150f96;
+        font-size: 30px;
+        text-transform: uppercase;
+        padding-left: 20px;
+    }
+
+    .portfolio-link, #share-btn{
+        display: none;
+    }
+
+    .about h3 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .about div ul {
+        display: block;
+    }
+
+    .experience-card{
+        padding: 10px;
+    }
+
+    .exp-card-header{
+        display: block;
+        padding: 10px;
+    }
+
+    .exp-card-header-left{
+        padding-bottom: 10px;
+    }
+
+    .education-card { 
+        padding: 20px;
+        display: block;
+    }
+
+    .education-card-left {
+        display: block;
+    }
+
+    .course-name {
+        padding-left: 0px;
+    }
+
+    .institute {
+        padding-left: 0px;
+    }
+
+    .period{
+        border-bottom: 1px solid #150f96;
+        padding-bottom: 5px;
+    }
+
+    .course-name{
+        padding-top: 5px;
+    }
+
+    .grade{
+        padding-top: 10px;
+    }
+
+    .skills-container{
+        display: block;
+    }
+
+    .skills-col{
+        line-height: 20px;
+    }
+
+    .project-desc{
+        line-height: 20px;
+    }
+
+    .about-desc{
+        line-height: 20px;
+    }
+
+    .exp-desc{
+        line-height: 20px;
+    }
+
+    .education-card{
+        line-height: 20px;
+    }
+
+    .achievements-list{
+        margin-bottom: 0;
+        line-height: 20px;
+    }
+
+    #Achievements{
+        padding-bottom: 5rem;
+    }
+
+
+}
